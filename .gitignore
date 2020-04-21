@@ -3,7 +3,7 @@
 *.so
 *.o
 build/*
-entityx/config.h
+#entityx/config.h
 Makefile
 html/
 Vagrantfile
