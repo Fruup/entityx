@@ -1,5 +1,5 @@
 project "EntityX"
-	location "entityx"
+	location ""
 	kind "StaticLib"
 	language "C++"
 	cppdialect "C++17"
@@ -8,13 +8,17 @@ project "EntityX"
 	targetdir "bin/%{cfg.buildcfg}"
 	objdir "bin-int/%{cfg.buildcfg}"
 	
-	includedirs {}
+	includedirs { "." }
 
 	files {
-		"*.h",
-		"*.cc"
+		--"entityx/**.h",
+		--"entityx/**.cc"
+		"entityx/Entity.cc",
+		"entityx/Event.cc",
+		"entityx/System.cc",
+		"entityx/help/Pool.cc",
+		"entityx/help/Timer.cc"
 	}
-
 
 	filter "system:windows"
 		systemversion "latest"
